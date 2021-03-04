@@ -1,7 +1,7 @@
 <template>
   <div class="top">
     <el-form inline size="small" :model="form" :rules="rules" ref="form">
-      <el-form-item class="uniteWidth" prop="cid">
+      <el-form-item prop="cid">
         <el-select v-model="form.cid" placeholder="请选择分类" clearable>
           <el-option
             v-for="item in cidOptions"
@@ -21,7 +21,7 @@
           clearable
         ></el-input>
       </el-form-item>
-      <el-form-item class="uniteWidth" prop="att">
+      <el-form-item prop="att">
         <el-select v-model="form.att" placeholder="请选择att" clearable>
           <el-option
             v-for="item in attOptions"
@@ -32,7 +32,7 @@
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item prop="author" class="uniteWidth">
+      <el-form-item prop="author">
         <el-input
           v-model="form.author"
           placeholder="文章作者"
@@ -43,7 +43,6 @@
       </el-form-item>
       <el-form-item prop="startDate">
         <el-date-picker
-          class="uniteWidth"
           v-model="form.startDate"
           type="date"
           placeholder="开始日期"
@@ -52,28 +51,11 @@
       </el-form-item>
       <el-form-item prop="endDate">
         <el-date-picker
-          class="uniteWidth"
           v-model="form.endDate"
           type="date"
           placeholder="结束日期"
         >
         </el-date-picker>
-      </el-form-item>
-      <el-form-item prop="startHits">
-        <el-input-number
-          v-model="form.startHits"
-          :min="0"
-          :controls="false"
-          class="uniteWidth"
-        ></el-input-number>
-      </el-form-item>
-      <el-form-item prop="endHits">
-        <el-input-number
-          v-model="form.endHits"
-          :min="0"
-          :controls="false"
-          class="uniteWidth"
-        ></el-input-number>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitFrom('form')">查询</el-button>
@@ -135,17 +117,9 @@ export default {
         author: "",
         startDate: "",
         endDate: "",
-        startHits: "",
-        endHits: "",
       },
       rules: articleListFromRules,
     };
   },
 };
 </script>
-
-<style scoped>
-.uniteWidth {
-  width: 130px;
-}
-</style>

@@ -22,6 +22,17 @@
         <el-menu-item index="/article/addArticle">添加文章</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
+    <el-submenu index="3">
+      <template slot="title">
+        <i class="el-icon-s-grid"></i>
+        <span slot="title">项目管理</span>
+      </template>
+      <el-menu-item-group>
+        <el-menu-item index="/project/applyfor">项目申报库</el-menu-item>
+        <el-menu-item index="/project/collect">征集项目库</el-menu-item>
+        <el-menu-item index="/project/research">研究项目</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
   </el-menu>
 </template>
 
